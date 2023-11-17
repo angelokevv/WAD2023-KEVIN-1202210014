@@ -12,11 +12,8 @@
 // 
   
 // Buatlah perkondisian jika tidak bisa terkoneksi ke database maka akan mengeluarkan errornya
-    if ($conn) {
-        echo "Connection success";
-    }
-    else {
-        echo "Database tidak connect";
+    if (!$conn) {
+        die("Koneksi gagal: " . mysqli_connect_error());
     }
 // 
 ?>
